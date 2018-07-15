@@ -129,6 +129,13 @@ namespace WindowsFormsApplication5
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
             }
+            else 
+            {
+                MailBox.Enabled = false;
+                AttachementBox.Enabled = false;
+                ProgressBox.Enabled = true;
+
+            }
         }
     }
 }
