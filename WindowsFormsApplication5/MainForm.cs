@@ -137,5 +137,19 @@ namespace WindowsFormsApplication5
 
             }
         }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            MailBox.Enabled = true;
+            ProgressBox.Enabled = false;
+            if (Attachement.Checked == true)
+            {
+                AttachementBox.Enabled = true;
+            }
+            else
+            {
+                AttachementBox.Enabled = false;
+            }
+        }
     }
 }

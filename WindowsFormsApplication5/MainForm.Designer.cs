@@ -53,6 +53,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.CustomFilesBrowse = new System.Windows.Forms.FolderBrowserDialog();
             this.CommonFilesBrowse = new System.Windows.Forms.OpenFileDialog();
+            this.CancelBtn = new System.Windows.Forms.Button();
             this.ProgressBox.SuspendLayout();
             this.MailBox.SuspendLayout();
             this.AttachementBox.SuspendLayout();
@@ -77,12 +78,13 @@
             // 
             // ProgressBox
             // 
+            this.ProgressBox.Controls.Add(this.CancelBtn);
             this.ProgressBox.Controls.Add(this.Percentage);
             this.ProgressBox.Controls.Add(this.SendingLabel);
             this.ProgressBox.Controls.Add(this.SendingProgress);
             this.ProgressBox.Location = new System.Drawing.Point(12, 406);
             this.ProgressBox.Name = "ProgressBox";
-            this.ProgressBox.Size = new System.Drawing.Size(458, 116);
+            this.ProgressBox.Size = new System.Drawing.Size(458, 138);
             this.ProgressBox.TabIndex = 2;
             this.ProgressBox.TabStop = false;
             this.ProgressBox.Text = "Progress";
@@ -275,11 +277,21 @@
             // 
             this.CommonFilesBrowse.FileName = "Attachement";
             // 
+            // CancelBtn
+            // 
+            this.CancelBtn.Location = new System.Drawing.Point(373, 109);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.CancelBtn.TabIndex = 4;
+            this.CancelBtn.Text = "Cancel";
+            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 534);
+            this.ClientSize = new System.Drawing.Size(475, 556);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.AttachementBox);
             this.Controls.Add(this.MailBox);
@@ -327,6 +339,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FolderBrowserDialog CustomFilesBrowse;
         private System.Windows.Forms.OpenFileDialog CommonFilesBrowse;
+        private System.Windows.Forms.Button CancelBtn;
     }
 }
 
