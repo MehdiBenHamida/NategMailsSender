@@ -54,6 +54,7 @@
             this.CustomFilesBrowse = new System.Windows.Forms.FolderBrowserDialog();
             this.CommonFilesBrowse = new System.Windows.Forms.OpenFileDialog();
             this.CancelBtn = new System.Windows.Forms.Button();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.ProgressBox.SuspendLayout();
             this.MailBox.SuspendLayout();
             this.AttachementBox.SuspendLayout();
@@ -340,6 +341,7 @@
         private System.Windows.Forms.FolderBrowserDialog CustomFilesBrowse;
         private System.Windows.Forms.OpenFileDialog CommonFilesBrowse;
         private System.Windows.Forms.Button CancelBtn;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }
 

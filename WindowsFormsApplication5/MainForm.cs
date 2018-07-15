@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
+using System.IO;
 
 namespace WindowsFormsApplication5
 {
@@ -22,6 +24,35 @@ namespace WindowsFormsApplication5
         public MainForm()
         {
             InitializeComponent();
+            backgroundWorker.WorkerReportsProgress = true;
+            backgroundWorker.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
+            // backgroundWorker.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker_ProgressChanged);
+            //backgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker_Compeleted);
+        }
+
+        void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            int progress = 0;
+            try
+            {
+                char delimiter = ',';
+                using (System.IO.StreamReader file = new StreamReader(ReceiversFile))
+                {
+                    string line = file.ReadLine();
+                    while ((line != null))
+                    {
+                        string[] cols = line.Split(delimiter);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                string caption = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+            }
+
         }
 
         private void Configuration_Click(object sender, EventArgs e)
@@ -110,45 +141,72 @@ namespace WindowsFormsApplication5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SenderMail = Config.Mail;
-            SenderPassword = Config.Password;
-            Subject = MailSubject.Text;
-            Content = MailContent.Text;
-            ReceiversFile = ReceiversPath.Text;
-            if (string.IsNullOrEmpty(SenderMail) || string.IsNullOrEmpty(SenderPassword))
+            try
             {
-                string message = "You have to set sender cridentials (mail and password) first!";
+                SenderMail = Config.Mail;
+                SenderPassword = Config.Password;
+                Subject = MailSubject.Text;
+                Content = MailContent.Text;
+                ReceiversFile = ReceiversPath.Text;
+                if (string.IsNullOrEmpty(SenderMail) || string.IsNullOrEmpty(SenderPassword))
+                {
+                    string message = "You have to set sender cridentials (mail and password) first!";
+                    string caption = "Error";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+                }
+                else if (string.IsNullOrEmpty(Content))
+                {
+                    string message = "You can not send an email with an empty content!";
+                    string caption = "Error";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+                }
+                else if (string.IsNullOrEmpty(ReceiversFile))
+                {
+                    string message = "You have to select a csv file of receivers details!";
+                    string caption = "Error";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MailBox.Enabled = false;
+                    AttachementBox.Enabled = false;
+                    ProgressBox.Enabled = true;
+                    backgroundWorker.RunWorkerAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
                 string caption = "Error";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
-            }
-            else if (string.IsNullOrEmpty(Content))
-            {
-                string message = "You can not send an email with an empty content!";
-                string caption = "Error";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
-            }
-            else 
-            {
-                MailBox.Enabled = false;
-                AttachementBox.Enabled = false;
-                ProgressBox.Enabled = true;
-
             }
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            MailBox.Enabled = true;
-            ProgressBox.Enabled = false;
-            if (Attachement.Checked == true)
+            try
             {
-                AttachementBox.Enabled = true;
+                MailBox.Enabled = true;
+                ProgressBox.Enabled = false;
+                if (Attachement.Checked == true)
+                {
+                    AttachementBox.Enabled = true;
+                }
+                else
+                {
+                    AttachementBox.Enabled = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                AttachementBox.Enabled = false;
+                string message = ex.Message;
+                string caption = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
             }
         }
     }
