@@ -29,7 +29,7 @@ namespace WindowsFormsApplication5
             backgroundWorker.WorkerReportsProgress = true;
             backgroundWorker.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
             backgroundWorker.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker_ProgressChanged);
-            //backgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker_Compeleted);
+            backgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker_Compeleted);
         }
 
         void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -46,6 +46,7 @@ namespace WindowsFormsApplication5
                         string[] details = line.Split(delimiter);
                         MailMessage mail = new MailMessage();
                         mail.From = new MailAddress(SenderMail);
+                        mail.Subject = Subject;
                         mail.To.Add(details[1]);
                         Name = details[0];
                         mail.Body = "Dear " + Name + ",\n" + Content;
