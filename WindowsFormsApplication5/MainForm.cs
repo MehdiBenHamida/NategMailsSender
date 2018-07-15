@@ -42,6 +42,7 @@ namespace WindowsFormsApplication5
                     while ((line != null))
                     {
                         string[] cols = line.Split(delimiter);
+                        line = file.ReadLine();
                     }
                 }
             }
