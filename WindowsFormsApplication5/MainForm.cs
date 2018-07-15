@@ -20,13 +20,15 @@ namespace WindowsFormsApplication5
         string Subject;
         string Content;
         string ReceiversFile;
+        int AllLines;
+        string Name;
 
         public MainForm()
         {
             InitializeComponent();
             backgroundWorker.WorkerReportsProgress = true;
             backgroundWorker.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
-            // backgroundWorker.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker_ProgressChanged);
+            backgroundWorker.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker_ProgressChanged);
             //backgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker_Compeleted);
         }
 
@@ -41,8 +43,28 @@ namespace WindowsFormsApplication5
                     string line = file.ReadLine();
                     while ((line != null))
                     {
-                        string[] cols = line.Split(delimiter);
+                        string[] details = line.Split(delimiter);
+                        MailMessage mail = new MailMessage();
+                        mail.From = new MailAddress(SenderMail);
+                        mail.To.Add(details[1]);
+                        Name = details[0];
+                        mail.Body = "Dear " + Name + ",\n" + Content;
+                        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com", 587);
+                        SmtpServer.Credentials = new System.Net.NetworkCredential(SenderMail, SenderPassword);
+                        SmtpServer.EnableSsl = true;
+                        try
+                        {
+                            SmtpServer.Send(mail);
+                            progress++;
+                            backgroundWorker.ReportProgress(progress);
+                        }
+                        catch (Exception ep)
+                        {
+                            MessageBox.Show("Can not send mail to: " + Name + "\n" + ep.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
                         line = file.ReadLine();
+
                     }
                 }
             }
@@ -52,6 +74,38 @@ namespace WindowsFormsApplication5
                 string caption = "Error";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+            }
+
+        }
+
+        void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            int d;
+            d = Convert.ToInt32((e.ProgressPercentage / AllLines) * 100);
+            SendingProgress.Value = d;
+            Percentage.Text = d.ToString() + " %";
+            SendingLabel.Text = "Sending mail to: " + Name;
+        }
+
+
+        void backgroundWorker_Compeleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Percentage.Text = "100 %";
+            SendingLabel.Text = "All mails are sent succesfully!"; 
+            string messages = "All mails has been sent!";
+            string captions = "INFO";
+            MessageBoxButtons button = MessageBoxButtons.OK;
+            MessageBox.Show(messages, captions, button, MessageBoxIcon.Information);
+            // test here 
+            MailBox.Enabled = true;
+            ProgressBox.Enabled = false;
+            if (Attachement.Checked == true)
+            {
+                AttachementBox.Enabled = true;
+            }
+            else
+            {
+                AttachementBox.Enabled = false;
             }
 
         }
@@ -175,6 +229,7 @@ namespace WindowsFormsApplication5
                     MailBox.Enabled = false;
                     AttachementBox.Enabled = false;
                     ProgressBox.Enabled = true;
+                    AllLines = File.ReadLines(ReceiversFile).Count();
                     backgroundWorker.RunWorkerAsync();
                 }
             }
