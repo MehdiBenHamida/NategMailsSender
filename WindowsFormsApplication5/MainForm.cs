@@ -51,7 +51,14 @@ namespace NategMailsSender
                         mail.Subject = Subject;
                         mail.To.Add(details[1]);
                         ReceiverName = details[0];
-                        mail.Body = "Dear " + ReceiverName + ",\n\n" + Content;
+                        if (DearTopMessage.Checked)
+                        {
+                            mail.Body = "Dear " + ReceiverName + ",\n\n" + Content;
+                        }
+                        else
+                        {
+                            mail.Body = Content;
+                        }
                         if (Attachement.Checked)
                         {
                             if (CommonFiles.Checked)
@@ -60,7 +67,7 @@ namespace NategMailsSender
                             }
                             else if (CustomFiles.Checked)
                             {
-                                //do thing if attachement is custom for each mail
+                                //do things if attachement is custom for each mail
                             }
                             //Attachment data = new Attachment("");
                             //mail.Attachments.Add(data);

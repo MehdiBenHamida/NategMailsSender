@@ -42,6 +42,7 @@
             this.MailContent = new System.Windows.Forms.TextBox();
             this.MailSubject = new System.Windows.Forms.TextBox();
             this.AttachementBox = new System.Windows.Forms.GroupBox();
+            this.ModeLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AttachementBrowse = new System.Windows.Forms.Button();
             this.AttachementPath = new System.Windows.Forms.TextBox();
@@ -53,7 +54,7 @@
             this.CommonFilesBrowse = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.Help = new System.Windows.Forms.Button();
-            this.ModeLabel = new System.Windows.Forms.Label();
+            this.DearTopMessage = new System.Windows.Forms.CheckBox();
             this.ProgressBox.SuspendLayout();
             this.MailBox.SuspendLayout();
             this.AttachementBox.SuspendLayout();
@@ -82,7 +83,7 @@
             this.ProgressBox.Controls.Add(this.Percentage);
             this.ProgressBox.Controls.Add(this.SendingLabel);
             this.ProgressBox.Controls.Add(this.SendingProgress);
-            this.ProgressBox.Location = new System.Drawing.Point(12, 406);
+            this.ProgressBox.Location = new System.Drawing.Point(12, 446);
             this.ProgressBox.Name = "ProgressBox";
             this.ProgressBox.Size = new System.Drawing.Size(458, 138);
             this.ProgressBox.TabIndex = 2;
@@ -119,6 +120,7 @@
             // 
             // MailBox
             // 
+            this.MailBox.Controls.Add(this.DearTopMessage);
             this.MailBox.Controls.Add(this.Attachement);
             this.MailBox.Controls.Add(this.ContentLabel);
             this.MailBox.Controls.Add(this.SubjectLabel);
@@ -126,7 +128,7 @@
             this.MailBox.Controls.Add(this.MailSubject);
             this.MailBox.Location = new System.Drawing.Point(12, 41);
             this.MailBox.Name = "MailBox";
-            this.MailBox.Size = new System.Drawing.Size(458, 218);
+            this.MailBox.Size = new System.Drawing.Size(458, 261);
             this.MailBox.TabIndex = 3;
             this.MailBox.TabStop = false;
             this.MailBox.Text = "Mail";
@@ -134,7 +136,7 @@
             // Attachement
             // 
             this.Attachement.AutoSize = true;
-            this.Attachement.Location = new System.Drawing.Point(103, 195);
+            this.Attachement.Location = new System.Drawing.Point(103, 228);
             this.Attachement.Name = "Attachement";
             this.Attachement.Size = new System.Drawing.Size(86, 17);
             this.Attachement.TabIndex = 8;
@@ -145,7 +147,7 @@
             // ContentLabel
             // 
             this.ContentLabel.AutoSize = true;
-            this.ContentLabel.Location = new System.Drawing.Point(42, 56);
+            this.ContentLabel.Location = new System.Drawing.Point(42, 89);
             this.ContentLabel.Name = "ContentLabel";
             this.ContentLabel.Size = new System.Drawing.Size(47, 13);
             this.ContentLabel.TabIndex = 5;
@@ -162,7 +164,7 @@
             // 
             // MailContent
             // 
-            this.MailContent.Location = new System.Drawing.Point(103, 53);
+            this.MailContent.Location = new System.Drawing.Point(103, 86);
             this.MailContent.Multiline = true;
             this.MailContent.Name = "MailContent";
             this.MailContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -184,12 +186,21 @@
             this.AttachementBox.Controls.Add(this.AttachementPath);
             this.AttachementBox.Controls.Add(this.CustomFiles);
             this.AttachementBox.Controls.Add(this.CommonFiles);
-            this.AttachementBox.Location = new System.Drawing.Point(12, 270);
+            this.AttachementBox.Location = new System.Drawing.Point(12, 308);
             this.AttachementBox.Name = "AttachementBox";
             this.AttachementBox.Size = new System.Drawing.Size(458, 100);
             this.AttachementBox.TabIndex = 0;
             this.AttachementBox.TabStop = false;
             this.AttachementBox.Text = "Attachement";
+            // 
+            // ModeLabel
+            // 
+            this.ModeLabel.AutoSize = true;
+            this.ModeLabel.Location = new System.Drawing.Point(52, 23);
+            this.ModeLabel.Name = "ModeLabel";
+            this.ModeLabel.Size = new System.Drawing.Size(37, 13);
+            this.ModeLabel.TabIndex = 5;
+            this.ModeLabel.Text = "Mode:";
             // 
             // label1
             // 
@@ -248,7 +259,7 @@
             // 
             // SendMails
             // 
-            this.SendMails.Location = new System.Drawing.Point(374, 377);
+            this.SendMails.Location = new System.Drawing.Point(374, 418);
             this.SendMails.Name = "SendMails";
             this.SendMails.Size = new System.Drawing.Size(96, 23);
             this.SendMails.TabIndex = 4;
@@ -270,20 +281,21 @@
             this.Help.UseVisualStyleBackColor = true;
             this.Help.Click += new System.EventHandler(this.Help_Click);
             // 
-            // ModeLabel
+            // DearTopMessage
             // 
-            this.ModeLabel.AutoSize = true;
-            this.ModeLabel.Location = new System.Drawing.Point(52, 23);
-            this.ModeLabel.Name = "ModeLabel";
-            this.ModeLabel.Size = new System.Drawing.Size(37, 13);
-            this.ModeLabel.TabIndex = 5;
-            this.ModeLabel.Text = "Mode:";
+            this.DearTopMessage.AutoSize = true;
+            this.DearTopMessage.Location = new System.Drawing.Point(103, 58);
+            this.DearTopMessage.Name = "DearTopMessage";
+            this.DearTopMessage.Size = new System.Drawing.Size(95, 17);
+            this.DearTopMessage.TabIndex = 9;
+            this.DearTopMessage.Text = "Dear <Name>,";
+            this.DearTopMessage.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 556);
+            this.ClientSize = new System.Drawing.Size(481, 597);
             this.Controls.Add(this.Help);
             this.Controls.Add(this.SendMails);
             this.Controls.Add(this.AttachementBox);
@@ -333,6 +345,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.Button Help;
         private System.Windows.Forms.Label ModeLabel;
+        private System.Windows.Forms.CheckBox DearTopMessage;
     }
 }
 
