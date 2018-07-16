@@ -39,7 +39,7 @@ namespace WindowsFormsApplication5
             int progress = 0;
             try
             {
-                char delimiter = ';';
+                char delimiter = Config.Delimiter;
                 using (System.IO.StreamReader file = new StreamReader(ReceiversFile))
                 {
                     string line = file.ReadLine();
@@ -51,7 +51,20 @@ namespace WindowsFormsApplication5
                         mail.Subject = Subject;
                         mail.To.Add(details[1]);
                         Name = details[0];
-                        mail.Body = "Dear Participant" /*+ Name*/ + ",\n" + Content; // to change 
+                        mail.Body = "Dear " + Name + ",\n\n" + Content;
+                        if (Attachement.Checked)
+                        {
+                            if (CommonFiles.Checked)
+                            {
+                                //do things for if attachement is common file
+                            }
+                            else if (CustomFiles.Checked)
+                            {
+                                //do thing if attachement is custom for each mail
+                            }
+                            //Attachment data = new Attachment("");
+                            //mail.Attachments.Add(data);
+                        }
                         SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com", 587);
                         SmtpServer.Credentials = new System.Net.NetworkCredential(SenderMail, SenderPassword);
                         SmtpServer.EnableSsl = true;
@@ -64,7 +77,7 @@ namespace WindowsFormsApplication5
                         }
                         catch (Exception ep)
                         {
-                            MessageBox.Show("Can not send mail to: " + Name + "\n" + ep.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Can not send mail to: " + Name + "\n" + ep.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             isSuccess = false;
                             break;
                         }
@@ -100,7 +113,7 @@ namespace WindowsFormsApplication5
                 Percentage.Text = "100 %";
                 SendingLabel.Text = "All mails are sent succesfully!";
                 string messages = "All mails has been sent!";
-                string captions = "INFO";
+                string captions = "Info";
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBox.Show(messages, captions, button, MessageBoxIcon.Information);
             }
