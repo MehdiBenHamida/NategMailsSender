@@ -188,17 +188,20 @@ namespace NategMailsSender
         {
             try
             {
+                AttachementPath.Text = "";
                 if (CommonFiles.Checked == true)
                 {
-                    DialogResult result = CommonFilesBrowse.ShowDialog();
-                    if (result == DialogResult.OK)
+                    if (CommonFilesBrowse.ShowDialog() == DialogResult.OK)
                     {
-                        string FileName = CommonFilesBrowse.FileName;
-                        AttachementPath.Text = FileName;
+                        AttachementPath.Text = CommonFilesBrowse.FileName;
                     }
                 }
                 else if (CustomFiles.Checked == true)
-                {
+                {   
+                    if (CustomFilesBrowse.ShowDialog() == DialogResult.OK)
+                    {
+                        AttachementPath.Text = CustomFilesBrowse.SelectedPath;
+                    }
                 }
             }
             catch (Exception ex)

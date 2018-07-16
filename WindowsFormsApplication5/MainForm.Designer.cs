@@ -233,7 +233,7 @@
             // 
             // AttachementBrowse
             // 
-            this.AttachementBrowse.Location = new System.Drawing.Point(373, 52);
+            this.AttachementBrowse.Location = new System.Drawing.Point(373, 54);
             this.AttachementBrowse.Name = "AttachementBrowse";
             this.AttachementBrowse.Size = new System.Drawing.Size(75, 23);
             this.AttachementBrowse.TabIndex = 3;
