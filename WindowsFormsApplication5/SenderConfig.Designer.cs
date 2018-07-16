@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SenderConfig));
             this.SenderConfiguration = new System.Windows.Forms.GroupBox();
-            this.OK = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.TextBox();
             this.SenderMail = new System.Windows.Forms.TextBox();
+            this.OK = new System.Windows.Forms.Button();
+            this.Cancel = new System.Windows.Forms.Button();
             this.CsvFileConfigBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Comma = new System.Windows.Forms.RadioButton();
-            this.SemiColon = new System.Windows.Forms.RadioButton();
-            this.Tab = new System.Windows.Forms.RadioButton();
             this.Space = new System.Windows.Forms.RadioButton();
+            this.Tab = new System.Windows.Forms.RadioButton();
+            this.SemiColon = new System.Windows.Forms.RadioButton();
+            this.Comma = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.SenderConfiguration.SuspendLayout();
             this.CsvFileConfigBox.SuspendLayout();
             this.SuspendLayout();
@@ -58,26 +58,6 @@
             this.SenderConfiguration.TabIndex = 0;
             this.SenderConfiguration.TabStop = false;
             this.SenderConfiguration.Text = "Sender Configuration";
-            // 
-            // OK
-            // 
-            this.OK.Location = new System.Drawing.Point(260, 222);
-            this.OK.Name = "OK";
-            this.OK.Size = new System.Drawing.Size(75, 23);
-            this.OK.TabIndex = 5;
-            this.OK.Text = "Ok";
-            this.OK.UseVisualStyleBackColor = true;
-            this.OK.Click += new System.EventHandler(this.OK_Click);
-            // 
-            // Cancel
-            // 
-            this.Cancel.Location = new System.Drawing.Point(341, 222);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Cancel.TabIndex = 4;
-            this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // label2
             // 
@@ -112,6 +92,26 @@
             this.SenderMail.Size = new System.Drawing.Size(319, 20);
             this.SenderMail.TabIndex = 0;
             // 
+            // OK
+            // 
+            this.OK.Location = new System.Drawing.Point(260, 222);
+            this.OK.Name = "OK";
+            this.OK.Size = new System.Drawing.Size(75, 23);
+            this.OK.TabIndex = 5;
+            this.OK.Text = "Ok";
+            this.OK.UseVisualStyleBackColor = true;
+            this.OK.Click += new System.EventHandler(this.OK_Click);
+            // 
+            // Cancel
+            // 
+            this.Cancel.Location = new System.Drawing.Point(341, 222);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(75, 23);
+            this.Cancel.TabIndex = 4;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
             // CsvFileConfigBox
             // 
             this.CsvFileConfigBox.Controls.Add(this.Space);
@@ -126,34 +126,16 @@
             this.CsvFileConfigBox.TabStop = false;
             this.CsvFileConfigBox.Text = "Receivers File Configuration";
             // 
-            // label3
+            // Space
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Delimiter:";
-            // 
-            // Comma
-            // 
-            this.Comma.AutoSize = true;
-            this.Comma.Location = new System.Drawing.Point(29, 46);
-            this.Comma.Name = "Comma";
-            this.Comma.Size = new System.Drawing.Size(60, 17);
-            this.Comma.TabIndex = 1;
-            this.Comma.Text = "Comma";
-            this.Comma.UseVisualStyleBackColor = true;
-            // 
-            // SemiColon
-            // 
-            this.SemiColon.AutoSize = true;
-            this.SemiColon.Location = new System.Drawing.Point(121, 46);
-            this.SemiColon.Name = "SemiColon";
-            this.SemiColon.Size = new System.Drawing.Size(78, 17);
-            this.SemiColon.TabIndex = 2;
-            this.SemiColon.Text = "Semi Colon";
-            this.SemiColon.UseVisualStyleBackColor = true;
+            this.Space.AutoSize = true;
+            this.Space.Location = new System.Drawing.Point(316, 46);
+            this.Space.Name = "Space";
+            this.Space.Size = new System.Drawing.Size(56, 17);
+            this.Space.TabIndex = 4;
+            this.Space.TabStop = true;
+            this.Space.Text = "Space";
+            this.Space.UseVisualStyleBackColor = true;
             // 
             // Tab
             // 
@@ -166,16 +148,34 @@
             this.Tab.Text = "Tab";
             this.Tab.UseVisualStyleBackColor = true;
             // 
-            // Space
+            // SemiColon
             // 
-            this.Space.AutoSize = true;
-            this.Space.Location = new System.Drawing.Point(316, 46);
-            this.Space.Name = "Space";
-            this.Space.Size = new System.Drawing.Size(56, 17);
-            this.Space.TabIndex = 4;
-            this.Space.TabStop = true;
-            this.Space.Text = "Space";
-            this.Space.UseVisualStyleBackColor = true;
+            this.SemiColon.AutoSize = true;
+            this.SemiColon.Location = new System.Drawing.Point(121, 46);
+            this.SemiColon.Name = "SemiColon";
+            this.SemiColon.Size = new System.Drawing.Size(78, 17);
+            this.SemiColon.TabIndex = 2;
+            this.SemiColon.Text = "Semi Colon";
+            this.SemiColon.UseVisualStyleBackColor = true;
+            // 
+            // Comma
+            // 
+            this.Comma.AutoSize = true;
+            this.Comma.Location = new System.Drawing.Point(29, 46);
+            this.Comma.Name = "Comma";
+            this.Comma.Size = new System.Drawing.Size(60, 17);
+            this.Comma.TabIndex = 1;
+            this.Comma.Text = "Comma";
+            this.Comma.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Delimiter:";
             // 
             // SenderConfig
             // 
@@ -189,8 +189,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SenderConfig";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SenderConfig";
+            this.Text = "Configuration";
             this.Load += new System.EventHandler(this.SenderConfig_Load);
             this.SenderConfiguration.ResumeLayout(false);
             this.SenderConfiguration.PerformLayout();
