@@ -127,12 +127,7 @@ namespace NategMailsSender
             else
             {
                 SendingLabel.Text = "Sending failed";
-                string messages = "Sending mails failed";
-                string captions = "Error";
-                MessageBoxButtons button = MessageBoxButtons.OK;
-                MessageBox.Show(messages, captions, button, MessageBoxIcon.Error);
             }
-            // test here 
             MailBox.Enabled = true;
             ProgressBox.Enabled = false;
             if (Attachement.Checked == true)
@@ -143,7 +138,6 @@ namespace NategMailsSender
             {
                 AttachementBox.Enabled = false;
             }
-
         }
 
         private void Configuration_Click(object sender, EventArgs e)
