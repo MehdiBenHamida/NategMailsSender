@@ -163,26 +163,6 @@ namespace NategMailsSender
             CommonFiles.Checked = true;
             ProgressBox.Enabled = false;
         }
-        private void Browse_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Receivers.Filter = "csv files (*.csv)|*.csv";
-                DialogResult result = Receivers.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    string FileName = Receivers.FileName;
-                    ReceiversPath.Text = FileName;
-                }
-            }
-            catch (Exception ex)
-            {
-                string message = ex.Message;
-                string caption = "Error";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
-            }
-        }
 
         private void AttachementBrowse_Click(object sender, EventArgs e)
         {
@@ -220,7 +200,7 @@ namespace NategMailsSender
                 SenderPassword = Config.Password;
                 Subject = MailSubject.Text;
                 Content = MailContent.Text;
-                ReceiversFile = ReceiversPath.Text;
+                ReceiversFile = Config.ReceiversFilePath;
                 if (string.IsNullOrEmpty(SenderMail) || string.IsNullOrEmpty(SenderPassword))
                 {
                     string message = "You have to set sender cridentials (mail and password) first!";

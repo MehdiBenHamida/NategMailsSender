@@ -11,6 +11,7 @@ namespace NategMailsSender
         static private string _mail { get; set; } = "mail@example.com";
         static private string _password { get; set; } = "12345";
         static private char _delimiter { get; set; } = ',';
+        static private string _receiversFilePath { get; set; }
 
         public static string Mail
         {
@@ -26,6 +27,11 @@ namespace NategMailsSender
         {
             get { return _delimiter; }
             set { _delimiter = value; }
+        }
+        public static string ReceiversFilePath
+        {
+            get { return _receiversFilePath; }
+            set { _receiversFilePath = value; }
         }
      
     }

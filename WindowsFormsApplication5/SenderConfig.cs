@@ -20,7 +20,8 @@ namespace NategMailsSender
         private void SenderConfig_Load(object sender, EventArgs e)
         {
             SenderMail.Text = Config.Mail;
-            Password.Text = Config.Password; 
+            Password.Text = Config.Password;
+            ReceiversPath.Text = Config.ReceiversFilePath;
             if (Config.Delimiter == ',')
             {
                 Comma.Checked = true;
@@ -48,6 +49,7 @@ namespace NategMailsSender
         {
             Config.Mail = SenderMail.Text;
             Config.Password = Password.Text;
+            Config.ReceiversFilePath = ReceiversPath.Text;
             if (Comma.Checked)
             {
                 Config.Delimiter = ',';
@@ -68,5 +70,24 @@ namespace NategMailsSender
             this.Close();
         }
 
+        private void Browse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Receivers.Filter = "csv files (*.csv)|*.csv";
+                DialogResult result = Receivers.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    ReceiversPath.Text = Receivers.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                string caption = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+            }
+        }
     }
 }

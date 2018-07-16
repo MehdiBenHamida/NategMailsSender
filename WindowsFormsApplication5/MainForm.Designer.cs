@@ -37,11 +37,8 @@
             this.SendingLabel = new System.Windows.Forms.Label();
             this.MailBox = new System.Windows.Forms.GroupBox();
             this.Attachement = new System.Windows.Forms.CheckBox();
-            this.Receiverslabel = new System.Windows.Forms.Label();
             this.ContentLabel = new System.Windows.Forms.Label();
             this.SubjectLabel = new System.Windows.Forms.Label();
-            this.Browse = new System.Windows.Forms.Button();
-            this.ReceiversPath = new System.Windows.Forms.TextBox();
             this.MailContent = new System.Windows.Forms.TextBox();
             this.MailSubject = new System.Windows.Forms.TextBox();
             this.AttachementBox = new System.Windows.Forms.GroupBox();
@@ -122,11 +119,8 @@
             // MailBox
             // 
             this.MailBox.Controls.Add(this.Attachement);
-            this.MailBox.Controls.Add(this.Receiverslabel);
             this.MailBox.Controls.Add(this.ContentLabel);
             this.MailBox.Controls.Add(this.SubjectLabel);
-            this.MailBox.Controls.Add(this.Browse);
-            this.MailBox.Controls.Add(this.ReceiversPath);
             this.MailBox.Controls.Add(this.MailContent);
             this.MailBox.Controls.Add(this.MailSubject);
             this.MailBox.Location = new System.Drawing.Point(12, 41);
@@ -147,15 +141,6 @@
             this.Attachement.UseVisualStyleBackColor = true;
             this.Attachement.CheckedChanged += new System.EventHandler(this.Attachement_CheckedChanged);
             // 
-            // Receiverslabel
-            // 
-            this.Receiverslabel.AutoSize = true;
-            this.Receiverslabel.Location = new System.Drawing.Point(30, 167);
-            this.Receiverslabel.Name = "Receiverslabel";
-            this.Receiverslabel.Size = new System.Drawing.Size(61, 13);
-            this.Receiverslabel.TabIndex = 6;
-            this.Receiverslabel.Text = "Receivers: ";
-            // 
             // ContentLabel
             // 
             this.ContentLabel.AutoSize = true;
@@ -174,31 +159,13 @@
             this.SubjectLabel.TabIndex = 4;
             this.SubjectLabel.Text = "Subject: ";
             // 
-            // Browse
-            // 
-            this.Browse.Location = new System.Drawing.Point(373, 157);
-            this.Browse.Name = "Browse";
-            this.Browse.Size = new System.Drawing.Size(75, 23);
-            this.Browse.TabIndex = 3;
-            this.Browse.Text = "Browse";
-            this.Browse.UseVisualStyleBackColor = true;
-            this.Browse.Click += new System.EventHandler(this.Browse_Click);
-            // 
-            // ReceiversPath
-            // 
-            this.ReceiversPath.Enabled = false;
-            this.ReceiversPath.Location = new System.Drawing.Point(103, 160);
-            this.ReceiversPath.Name = "ReceiversPath";
-            this.ReceiversPath.Size = new System.Drawing.Size(265, 20);
-            this.ReceiversPath.TabIndex = 2;
-            // 
             // MailContent
             // 
             this.MailContent.Location = new System.Drawing.Point(103, 53);
             this.MailContent.Multiline = true;
             this.MailContent.Name = "MailContent";
             this.MailContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.MailContent.Size = new System.Drawing.Size(345, 100);
+            this.MailContent.Size = new System.Drawing.Size(345, 127);
             this.MailContent.TabIndex = 1;
             // 
             // MailSubject
@@ -336,14 +303,11 @@
         private System.Windows.Forms.Label Percentage;
         private System.Windows.Forms.Label SendingLabel;
         private System.Windows.Forms.GroupBox MailBox;
-        private System.Windows.Forms.Button Browse;
-        private System.Windows.Forms.TextBox ReceiversPath;
         private System.Windows.Forms.TextBox MailContent;
         private System.Windows.Forms.TextBox MailSubject;
         private System.Windows.Forms.GroupBox AttachementBox;
         private System.Windows.Forms.OpenFileDialog Receivers;
         private System.Windows.Forms.CheckBox Attachement;
-        private System.Windows.Forms.Label Receiverslabel;
         private System.Windows.Forms.Label ContentLabel;
         private System.Windows.Forms.Label SubjectLabel;
         private System.Windows.Forms.RadioButton CustomFiles;
