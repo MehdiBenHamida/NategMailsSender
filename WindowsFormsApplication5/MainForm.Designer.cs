@@ -48,11 +48,12 @@
             this.CustomFiles = new System.Windows.Forms.RadioButton();
             this.CommonFiles = new System.Windows.Forms.RadioButton();
             this.Receivers = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SendMails = new System.Windows.Forms.Button();
             this.CustomFilesBrowse = new System.Windows.Forms.FolderBrowserDialog();
             this.CommonFilesBrowse = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.Help = new System.Windows.Forms.Button();
+            this.ModeLabel = new System.Windows.Forms.Label();
             this.ProgressBox.SuspendLayout();
             this.MailBox.SuspendLayout();
             this.AttachementBox.SuspendLayout();
@@ -177,6 +178,7 @@
             // 
             // AttachementBox
             // 
+            this.AttachementBox.Controls.Add(this.ModeLabel);
             this.AttachementBox.Controls.Add(this.label1);
             this.AttachementBox.Controls.Add(this.AttachementBrowse);
             this.AttachementBox.Controls.Add(this.AttachementPath);
@@ -192,7 +194,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 56);
+            this.label1.Location = new System.Drawing.Point(57, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 4;
@@ -221,10 +223,10 @@
             this.CustomFiles.AutoSize = true;
             this.CustomFiles.Location = new System.Drawing.Point(278, 19);
             this.CustomFiles.Name = "CustomFiles";
-            this.CustomFiles.Size = new System.Drawing.Size(79, 17);
+            this.CustomFiles.Size = new System.Drawing.Size(84, 17);
             this.CustomFiles.TabIndex = 1;
             this.CustomFiles.TabStop = true;
-            this.CustomFiles.Text = "Custom File";
+            this.CustomFiles.Text = "Custom Files";
             this.CustomFiles.UseVisualStyleBackColor = true;
             this.CustomFiles.CheckedChanged += new System.EventHandler(this.CustomFiles_CheckedChanged);
             // 
@@ -233,10 +235,10 @@
             this.CommonFiles.AutoSize = true;
             this.CommonFiles.Location = new System.Drawing.Point(115, 19);
             this.CommonFiles.Name = "CommonFiles";
-            this.CommonFiles.Size = new System.Drawing.Size(90, 17);
+            this.CommonFiles.Size = new System.Drawing.Size(85, 17);
             this.CommonFiles.TabIndex = 0;
             this.CommonFiles.TabStop = true;
-            this.CommonFiles.Text = "Common Files";
+            this.CommonFiles.Text = "Common File";
             this.CommonFiles.UseVisualStyleBackColor = true;
             this.CommonFiles.CheckedChanged += new System.EventHandler(this.CommonFiles_CheckedChanged);
             // 
@@ -244,15 +246,15 @@
             // 
             this.Receivers.FileName = "Receivers";
             // 
-            // button1
+            // SendMails
             // 
-            this.button1.Location = new System.Drawing.Point(374, 377);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Send Mails";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SendMails.Location = new System.Drawing.Point(374, 377);
+            this.SendMails.Name = "SendMails";
+            this.SendMails.Size = new System.Drawing.Size(96, 23);
+            this.SendMails.TabIndex = 4;
+            this.SendMails.Text = "Send Mails";
+            this.SendMails.UseVisualStyleBackColor = true;
+            this.SendMails.Click += new System.EventHandler(this.SendMails_Click);
             // 
             // CommonFilesBrowse
             // 
@@ -268,13 +270,22 @@
             this.Help.UseVisualStyleBackColor = true;
             this.Help.Click += new System.EventHandler(this.Help_Click);
             // 
+            // ModeLabel
+            // 
+            this.ModeLabel.AutoSize = true;
+            this.ModeLabel.Location = new System.Drawing.Point(52, 23);
+            this.ModeLabel.Name = "ModeLabel";
+            this.ModeLabel.Size = new System.Drawing.Size(37, 13);
+            this.ModeLabel.TabIndex = 5;
+            this.ModeLabel.Text = "Mode:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 556);
             this.Controls.Add(this.Help);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SendMails);
             this.Controls.Add(this.AttachementBox);
             this.Controls.Add(this.MailBox);
             this.Controls.Add(this.ProgressBox);
@@ -315,12 +326,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button AttachementBrowse;
         private System.Windows.Forms.TextBox AttachementPath;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SendMails;
         private System.Windows.Forms.FolderBrowserDialog CustomFilesBrowse;
         private System.Windows.Forms.OpenFileDialog CommonFilesBrowse;
         private System.Windows.Forms.Button CancelBtn;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.Button Help;
+        private System.Windows.Forms.Label ModeLabel;
     }
 }
 

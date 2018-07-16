@@ -192,7 +192,7 @@ namespace NategMailsSender
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SendMails_Click(object sender, EventArgs e)
         {
             try
             {
