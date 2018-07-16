@@ -22,6 +22,7 @@ namespace WindowsFormsApplication5
         string ReceiversFile;
         int AllLines;
         string Name;
+        Boolean isSuccess;
 
         public MainForm()
         {
@@ -30,6 +31,7 @@ namespace WindowsFormsApplication5
             backgroundWorker.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
             backgroundWorker.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker_ProgressChanged);
             backgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker_Compeleted);
+            backgroundWorker.WorkerSupportsCancellation = true;
         }
 
         void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -37,7 +39,7 @@ namespace WindowsFormsApplication5
             int progress = 0;
             try
             {
-                char delimiter = ',';
+                char delimiter = ';';
                 using (System.IO.StreamReader file = new StreamReader(ReceiversFile))
                 {
                     string line = file.ReadLine();
@@ -49,7 +51,7 @@ namespace WindowsFormsApplication5
                         mail.Subject = Subject;
                         mail.To.Add(details[1]);
                         Name = details[0];
-                        mail.Body = "Dear " + Name + ",\n" + Content;
+                        mail.Body = "Dear Participant" /*+ Name*/ + ",\n" + Content; // to change 
                         SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com", 587);
                         SmtpServer.Credentials = new System.Net.NetworkCredential(SenderMail, SenderPassword);
                         SmtpServer.EnableSsl = true;
@@ -58,25 +60,27 @@ namespace WindowsFormsApplication5
                             SmtpServer.Send(mail);
                             progress++;
                             backgroundWorker.ReportProgress(progress);
+                            isSuccess = true;
                         }
                         catch (Exception ep)
                         {
                             MessageBox.Show("Can not send mail to: " + Name + "\n" + ep.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            isSuccess = false;
                             break;
                         }
                         line = file.ReadLine();
-
                     }
                 }
             }
             catch (Exception ex)
             {
+                isSuccess = false;
                 string message = ex.Message;
                 string caption = "Error";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
             }
-
+            
         }
 
         void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -91,12 +95,23 @@ namespace WindowsFormsApplication5
 
         void backgroundWorker_Compeleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Percentage.Text = "100 %";
-            SendingLabel.Text = "All mails are sent succesfully!"; 
-            string messages = "All mails has been sent!";
-            string captions = "INFO";
-            MessageBoxButtons button = MessageBoxButtons.OK;
-            MessageBox.Show(messages, captions, button, MessageBoxIcon.Information);
+            if (isSuccess == true)
+            {
+                Percentage.Text = "100 %";
+                SendingLabel.Text = "All mails are sent succesfully!";
+                string messages = "All mails has been sent!";
+                string captions = "INFO";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(messages, captions, button, MessageBoxIcon.Information);
+            }
+            else
+            {
+                SendingLabel.Text = "Sending failed";
+                string messages = "Sending mails failed";
+                string captions = "Error";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(messages, captions, button, MessageBoxIcon.Error);
+            }
             // test here 
             MailBox.Enabled = true;
             ProgressBox.Enabled = false;
@@ -247,6 +262,7 @@ namespace WindowsFormsApplication5
         {
             try
             {
+                backgroundWorker.CancelAsync();
                 MailBox.Enabled = true;
                 ProgressBox.Enabled = false;
                 if (Attachement.Checked == true)
