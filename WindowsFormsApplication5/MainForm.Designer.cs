@@ -259,6 +259,7 @@
             this.CustomFiles.TabStop = true;
             this.CustomFiles.Text = "Custom File";
             this.CustomFiles.UseVisualStyleBackColor = true;
+            this.CustomFiles.CheckedChanged += new System.EventHandler(this.CustomFiles_CheckedChanged);
             // 
             // CommonFiles
             // 
@@ -270,6 +271,7 @@
             this.CommonFiles.TabStop = true;
             this.CommonFiles.Text = "Common Files";
             this.CommonFiles.UseVisualStyleBackColor = true;
+            this.CommonFiles.CheckedChanged += new System.EventHandler(this.CommonFiles_CheckedChanged);
             // 
             // Receivers
             // 

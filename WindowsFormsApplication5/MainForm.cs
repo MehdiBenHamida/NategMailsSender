@@ -188,7 +188,6 @@ namespace NategMailsSender
         {
             try
             {
-                AttachementPath.Text = "";
                 if (CommonFiles.Checked == true)
                 {
                     if (CommonFilesBrowse.ShowDialog() == DialogResult.OK)
@@ -290,6 +289,16 @@ namespace NategMailsSender
         {
             HelpForm Help = new HelpForm();
             Help.ShowDialog();
+        }
+
+        private void CommonFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            AttachementPath.Text = "";
+        }
+
+        private void CustomFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            AttachementPath.Text = "";
         }
     }
 }
