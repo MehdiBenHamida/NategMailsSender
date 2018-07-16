@@ -19,13 +19,24 @@ namespace WindowsFormsApplication5
 
         private void SenderConfig_Load(object sender, EventArgs e)
         {
-            /*if (Owner != null)
-            {
-                Location = new Point(Owner.Location.X + Owner.Width / 2 - Width / 2,
-                    Owner.Location.Y + Owner.Height / 2 - Height / 2);
-            }*/
             SenderMail.Text = Config.Mail;
             Password.Text = Config.Password; 
+            if (Config.Delimiter == ',')
+            {
+                Comma.Checked = true;
+            }
+            else if (Config.Delimiter == ';')
+            {
+                SemiColon.Checked = true;
+            }
+            else if (Config.Delimiter == '\t')
+            {
+                Tab.Checked = true;
+            }
+            else if (Config.Delimiter == ' ')
+            {
+                Space.Checked = true;
+            }
         }
 
         private void Cancel_Click(object sender, EventArgs e)
@@ -37,6 +48,23 @@ namespace WindowsFormsApplication5
         {
             Config.Mail = SenderMail.Text;
             Config.Password = Password.Text;
+            if (Comma.Checked)
+            {
+                Config.Delimiter = ',';
+            }
+            else if (SemiColon.Checked)
+            {
+                Config.Delimiter = ';';
+            }
+            else if (Tab.Checked)
+            {
+                Config.Delimiter = '\t';
+            }
+            else if (Space.Checked)
+            {
+                Config.Delimiter = ' ';
+            }
+
             this.Close();
         }
 
