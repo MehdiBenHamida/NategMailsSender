@@ -80,6 +80,9 @@
     <Compile Include="SenderConfig.Designer.cs">
       <DependentUpon>SenderConfig.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

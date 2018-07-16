@@ -21,7 +21,7 @@ namespace NategMailsSender
         string Content;
         string ReceiversFile;
         int AllLines;
-        string Name;
+        string ReceiverName;
         Boolean isSuccess;
 
         public MainForm()
@@ -50,8 +50,8 @@ namespace NategMailsSender
                         mail.From = new MailAddress(SenderMail);
                         mail.Subject = Subject;
                         mail.To.Add(details[1]);
-                        Name = details[0];
-                        mail.Body = "Dear " + Name + ",\n\n" + Content;
+                        ReceiverName = details[0];
+                        mail.Body = "Dear " + ReceiverName + ",\n\n" + Content;
                         if (Attachement.Checked)
                         {
                             if (CommonFiles.Checked)
@@ -77,7 +77,7 @@ namespace NategMailsSender
                         }
                         catch (Exception ep)
                         {
-                            MessageBox.Show("Can not send mail to: " + Name + "\n" + ep.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Can not send mail to: " + ReceiverName + "\n" + ep.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             isSuccess = false;
                             break;
                         }
@@ -102,7 +102,7 @@ namespace NategMailsSender
             d = Convert.ToInt32((e.ProgressPercentage / AllLines) * 100);
             SendingProgress.Value = d;
             Percentage.Text = d.ToString() + " %";
-            SendingLabel.Text = "Sending mail to: " + Name;
+            SendingLabel.Text = "Sending mail to: " + ReceiverName;
         }
 
 
@@ -163,19 +163,6 @@ namespace NategMailsSender
             CommonFiles.Checked = true;
             ProgressBox.Enabled = false;
         }
-        /*
-        private void MainForm_Close(object sender, FormClosingEventArgs e)
-        {
-            if (string.Equals((sender as Button).Name, @"CloseButton"))
-            {
-                if (MessageBox.Show("Are you sure you want quit Nateg Mails Sender?", "Validation",
-                    MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    e.Cancel = true;
-                }
-            }
-        }
-        */
         private void Browse_Click(object sender, EventArgs e)
         {
             try
@@ -298,7 +285,8 @@ namespace NategMailsSender
 
         private void Help_Click(object sender, EventArgs e)
         {
-            HelpFor
+            HelpForm Help = new HelpForm();
+            Help.ShowDialog();
         }
     }
 }

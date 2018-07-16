@@ -9,8 +9,6 @@ C:\Users\mhdib\Documents\Visual Studio 2012\Projects\WindowsFormsApplication5\Wi
 C:\Users\mhdib\Documents\Visual Studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.pdb
 C:\Users\mhdib\Documents\Visual Studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.SenderConfig.resources
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.csprojResolveAssemblyReference.cache
-C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.MainForm.resources
-C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.SenderConfig.resources
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.csproj.GenerateResource.Cache
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.csproj.CoreCompileInputs.cache
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\bin\Debug\NategMailsSender.exe.config
@@ -21,3 +19,4 @@ C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.pdb
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.MainForm.resources
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.SenderConfig.resources
+C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.HelpForm.resources
