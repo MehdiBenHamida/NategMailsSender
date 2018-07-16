@@ -106,7 +106,7 @@ namespace NategMailsSender
         void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int d;
-            d = Convert.ToInt32((e.ProgressPercentage / AllLines) * 100);
+            d = Convert.ToInt32(((double)e.ProgressPercentage / AllLines) * 100);
             SendingProgress.Value = d;
             Percentage.Text = d.ToString() + " %";
             SendingLabel.Text = "Sending mail to: " + ReceiverName;
