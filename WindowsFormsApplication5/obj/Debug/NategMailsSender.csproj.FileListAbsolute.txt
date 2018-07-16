@@ -19,3 +19,5 @@ C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.Properties.Resources.resources
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.exe
 C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.pdb
+C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.MainForm.resources
+C:\Users\mbhamida\Desktop\do some work\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.SenderConfig.resources

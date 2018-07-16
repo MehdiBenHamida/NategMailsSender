@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication5
+namespace NategMailsSender
 {
     public partial class SenderConfig : Form
     {

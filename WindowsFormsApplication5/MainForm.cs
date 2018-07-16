@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Net.Mail;
 using System.IO;
 
-namespace WindowsFormsApplication5
+namespace NategMailsSender
 {
     public partial class MainForm : Form
     {
@@ -294,6 +294,11 @@ namespace WindowsFormsApplication5
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
             }
+        }
+
+        private void Help_Click(object sender, EventArgs e)
+        {
+            HelpFor
         }
     }
 }

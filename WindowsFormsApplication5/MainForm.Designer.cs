@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication5
+﻿namespace NategMailsSender
 {
     partial class MainForm
     {
@@ -32,6 +32,7 @@
             this.Configuration = new System.Windows.Forms.Button();
             this.SendingProgress = new System.Windows.Forms.ProgressBar();
             this.ProgressBox = new System.Windows.Forms.GroupBox();
+            this.CancelBtn = new System.Windows.Forms.Button();
             this.Percentage = new System.Windows.Forms.Label();
             this.SendingLabel = new System.Windows.Forms.Label();
             this.MailBox = new System.Windows.Forms.GroupBox();
@@ -53,8 +54,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.CustomFilesBrowse = new System.Windows.Forms.FolderBrowserDialog();
             this.CommonFilesBrowse = new System.Windows.Forms.OpenFileDialog();
-            this.CancelBtn = new System.Windows.Forms.Button();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.Help = new System.Windows.Forms.Button();
             this.ProgressBox.SuspendLayout();
             this.MailBox.SuspendLayout();
             this.AttachementBox.SuspendLayout();
@@ -62,9 +63,9 @@
             // 
             // Configuration
             // 
-            this.Configuration.Location = new System.Drawing.Point(374, 12);
+            this.Configuration.Location = new System.Drawing.Point(392, 16);
             this.Configuration.Name = "Configuration";
-            this.Configuration.Size = new System.Drawing.Size(89, 30);
+            this.Configuration.Size = new System.Drawing.Size(78, 24);
             this.Configuration.TabIndex = 0;
             this.Configuration.Text = "Configuration";
             this.Configuration.UseVisualStyleBackColor = true;
@@ -89,6 +90,16 @@
             this.ProgressBox.TabIndex = 2;
             this.ProgressBox.TabStop = false;
             this.ProgressBox.Text = "Progress";
+            // 
+            // CancelBtn
+            // 
+            this.CancelBtn.Location = new System.Drawing.Point(373, 109);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.CancelBtn.TabIndex = 4;
+            this.CancelBtn.Text = "Cancel";
+            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // Percentage
             // 
@@ -278,21 +289,22 @@
             // 
             this.CommonFilesBrowse.FileName = "Attachement";
             // 
-            // CancelBtn
+            // Help
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(373, 109);
-            this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.CancelBtn.TabIndex = 4;
-            this.CancelBtn.Text = "Cancel";
-            this.CancelBtn.UseVisualStyleBackColor = true;
-            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            this.Help.Location = new System.Drawing.Point(311, 16);
+            this.Help.Name = "Help";
+            this.Help.Size = new System.Drawing.Size(75, 23);
+            this.Help.TabIndex = 5;
+            this.Help.Text = "Help";
+            this.Help.UseVisualStyleBackColor = true;
+            this.Help.Click += new System.EventHandler(this.Help_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 556);
+            this.Controls.Add(this.Help);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.AttachementBox);
             this.Controls.Add(this.MailBox);
@@ -342,6 +354,7 @@
         private System.Windows.Forms.OpenFileDialog CommonFilesBrowse;
         private System.Windows.Forms.Button CancelBtn;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.Windows.Forms.Button Help;
     }
 }
 
