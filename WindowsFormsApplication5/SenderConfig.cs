@@ -19,11 +19,11 @@ namespace WindowsFormsApplication5
 
         private void SenderConfig_Load(object sender, EventArgs e)
         {
-            if (Owner != null)
+            /*if (Owner != null)
             {
                 Location = new Point(Owner.Location.X + Owner.Width / 2 - Width / 2,
                     Owner.Location.Y + Owner.Height / 2 - Height / 2);
-            }
+            }*/
             SenderMail.Text = Config.Mail;
             Password.Text = Config.Password; 
         }

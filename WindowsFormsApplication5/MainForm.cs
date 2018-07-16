@@ -129,7 +129,7 @@ namespace WindowsFormsApplication5
         private void Configuration_Click(object sender, EventArgs e)
         {
             SenderConfig config = new SenderConfig();
-            config.Show(this);
+            config.ShowDialog();
         }
 
         private void Attachement_CheckedChanged(object sender, EventArgs e)
