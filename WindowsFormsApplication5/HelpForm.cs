@@ -21,5 +21,11 @@ namespace NategMailsSender
         {
             this.Close();
         }
+
+        private void GithubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GithubLink.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://github.com/MehdiBenHamida/NategMailsSender");
+        }
     }
 }

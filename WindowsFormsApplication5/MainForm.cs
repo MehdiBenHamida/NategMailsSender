@@ -36,6 +36,8 @@ namespace NategMailsSender
 
         void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            const int MaxAttemps = 3;
+            int Attemps = 0;
             int progress = 0;
             try
             {
@@ -68,15 +70,14 @@ namespace NategMailsSender
                             System.Net.Mail.Attachment attachment;
                             if (CommonFiles.Checked)
                             {
-                                //do things for if attachement is common file
-
+                                attachment = new System.Net.Mail.Attachment(AttachementPath.Text);
+                                mail.Attachments.Add(attachment);
                             }
                             else if (CustomFiles.Checked)
                             {
-                                //do things if attachement is custom for each mail
+                                attachment = new System.Net.Mail.Attachment(Path.Combine(AttachementPath.Text, details[2]));
+                                mail.Attachments.Add(attachment);
                             }
-                            //attachment = new System.Net.Mail.Attachment("");
-                            //mail.Attachments.Add(attachment);
                         }
                         SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com", 587);
                         SmtpServer.Credentials = new System.Net.NetworkCredential(SenderMail, SenderPassword);

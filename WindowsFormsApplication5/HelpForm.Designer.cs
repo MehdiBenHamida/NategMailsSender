@@ -89,6 +89,7 @@
             this.GithubLink.TabIndex = 1;
             this.GithubLink.TabStop = true;
             this.GithubLink.Text = "https://github.com/MehdiBenHamida/NategMailsSender";
+            this.GithubLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GithubLink_LinkClicked);
             // 
             // Support
             // 
