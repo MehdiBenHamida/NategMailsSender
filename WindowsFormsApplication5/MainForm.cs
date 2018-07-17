@@ -144,6 +144,7 @@ namespace NategMailsSender
             }
             MailBox.Enabled = true;
             ProgressBox.Enabled = false;
+            SendMails.Enabled = true;
             if (Attachement.Checked == true)
             {
                 AttachementBox.Enabled = true;
@@ -246,11 +247,13 @@ namespace NategMailsSender
                 }
                 else
                 {
+                    backgroundWorker.RunWorkerAsync();
+                    SendingLabel.Text = "Start sending...";
                     MailBox.Enabled = false;
                     AttachementBox.Enabled = false;
+                    SendMails.Enabled = false;
                     ProgressBox.Enabled = true;
                     AllLines = File.ReadLines(ReceiversFile).Count();
-                    backgroundWorker.RunWorkerAsync();
                 }
             }
             catch (Exception ex)
