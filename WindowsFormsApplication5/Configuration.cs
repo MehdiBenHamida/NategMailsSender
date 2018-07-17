@@ -39,6 +39,5 @@ namespace NategMailsSender
             get { return _fileHeader; }
             set { _fileHeader = value; }
         }
-     
     }
 }
