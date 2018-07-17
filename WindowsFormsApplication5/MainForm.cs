@@ -237,6 +237,13 @@ namespace NategMailsSender
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
                 }
+                else if (Config.Delimiter == '\0')
+                {
+                    string message = "You have to select a file delimiter to enable file parsing!";
+                    string caption = "Error";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+                }
                 else
                 {
                     MailBox.Enabled = false;
