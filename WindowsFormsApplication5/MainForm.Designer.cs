@@ -36,6 +36,7 @@
             this.Percentage = new System.Windows.Forms.Label();
             this.SendingLabel = new System.Windows.Forms.Label();
             this.MailBox = new System.Windows.Forms.GroupBox();
+            this.DearTopMessage = new System.Windows.Forms.CheckBox();
             this.Attachement = new System.Windows.Forms.CheckBox();
             this.ContentLabel = new System.Windows.Forms.Label();
             this.SubjectLabel = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.CommonFilesBrowse = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.Help = new System.Windows.Forms.Button();
-            this.DearTopMessage = new System.Windows.Forms.CheckBox();
             this.ProgressBox.SuspendLayout();
             this.MailBox.SuspendLayout();
             this.AttachementBox.SuspendLayout();
@@ -62,9 +62,9 @@
             // 
             // Configuration
             // 
-            this.Configuration.Location = new System.Drawing.Point(392, 16);
+            this.Configuration.Location = new System.Drawing.Point(311, 12);
             this.Configuration.Name = "Configuration";
-            this.Configuration.Size = new System.Drawing.Size(78, 24);
+            this.Configuration.Size = new System.Drawing.Size(78, 23);
             this.Configuration.TabIndex = 0;
             this.Configuration.Text = "Configuration";
             this.Configuration.UseVisualStyleBackColor = true;
@@ -132,6 +132,16 @@
             this.MailBox.TabIndex = 3;
             this.MailBox.TabStop = false;
             this.MailBox.Text = "Mail";
+            // 
+            // DearTopMessage
+            // 
+            this.DearTopMessage.AutoSize = true;
+            this.DearTopMessage.Location = new System.Drawing.Point(103, 58);
+            this.DearTopMessage.Name = "DearTopMessage";
+            this.DearTopMessage.Size = new System.Drawing.Size(95, 17);
+            this.DearTopMessage.TabIndex = 9;
+            this.DearTopMessage.Text = "Dear <Name>,";
+            this.DearTopMessage.UseVisualStyleBackColor = true;
             // 
             // Attachement
             // 
@@ -273,23 +283,13 @@
             // 
             // Help
             // 
-            this.Help.Location = new System.Drawing.Point(311, 16);
+            this.Help.Location = new System.Drawing.Point(395, 12);
             this.Help.Name = "Help";
             this.Help.Size = new System.Drawing.Size(75, 23);
             this.Help.TabIndex = 5;
             this.Help.Text = "Help";
             this.Help.UseVisualStyleBackColor = true;
             this.Help.Click += new System.EventHandler(this.Help_Click);
-            // 
-            // DearTopMessage
-            // 
-            this.DearTopMessage.AutoSize = true;
-            this.DearTopMessage.Location = new System.Drawing.Point(103, 58);
-            this.DearTopMessage.Name = "DearTopMessage";
-            this.DearTopMessage.Size = new System.Drawing.Size(95, 17);
-            this.DearTopMessage.TabIndex = 9;
-            this.DearTopMessage.Text = "Dear <Name>,";
-            this.DearTopMessage.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

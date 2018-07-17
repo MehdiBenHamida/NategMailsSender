@@ -36,8 +36,11 @@
             this.GithubLink = new System.Windows.Forms.LinkLabel();
             this.Support = new System.Windows.Forms.Label();
             this.OkBtn = new System.Windows.Forms.Button();
+            this.ContactBox = new System.Windows.Forms.GroupBox();
+            this.ContactLabel = new System.Windows.Forms.Label();
             this.UserNotes.SuspendLayout();
             this.License.SuspendLayout();
+            this.ContactBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // UserNotes
@@ -62,7 +65,7 @@
             // License
             // 
             this.License.Controls.Add(this.LicenseLabel);
-            this.License.Location = new System.Drawing.Point(12, 153);
+            this.License.Location = new System.Drawing.Point(12, 146);
             this.License.Name = "License";
             this.License.Size = new System.Drawing.Size(404, 71);
             this.License.TabIndex = 1;
@@ -83,7 +86,7 @@
             // GithubLink
             // 
             this.GithubLink.AutoSize = true;
-            this.GithubLink.Location = new System.Drawing.Point(63, 236);
+            this.GithubLink.Location = new System.Drawing.Point(63, 294);
             this.GithubLink.Name = "GithubLink";
             this.GithubLink.Size = new System.Drawing.Size(276, 13);
             this.GithubLink.TabIndex = 1;
@@ -94,7 +97,7 @@
             // Support
             // 
             this.Support.AutoSize = true;
-            this.Support.Location = new System.Drawing.Point(148, 259);
+            this.Support.Location = new System.Drawing.Point(148, 313);
             this.Support.Name = "Support";
             this.Support.Size = new System.Drawing.Size(109, 13);
             this.Support.TabIndex = 2;
@@ -102,7 +105,7 @@
             // 
             // OkBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(341, 280);
+            this.OkBtn.Location = new System.Drawing.Point(341, 330);
             this.OkBtn.Name = "OkBtn";
             this.OkBtn.Size = new System.Drawing.Size(75, 23);
             this.OkBtn.TabIndex = 3;
@@ -110,11 +113,31 @@
             this.OkBtn.UseVisualStyleBackColor = true;
             this.OkBtn.Click += new System.EventHandler(this.OkBtn_Click);
             // 
+            // ContactBox
+            // 
+            this.ContactBox.Controls.Add(this.ContactLabel);
+            this.ContactBox.Location = new System.Drawing.Point(12, 226);
+            this.ContactBox.Name = "ContactBox";
+            this.ContactBox.Size = new System.Drawing.Size(404, 60);
+            this.ContactBox.TabIndex = 4;
+            this.ContactBox.TabStop = false;
+            this.ContactBox.Text = "Contact";
+            // 
+            // ContactLabel
+            // 
+            this.ContactLabel.AutoSize = true;
+            this.ContactLabel.Location = new System.Drawing.Point(7, 22);
+            this.ContactLabel.Name = "ContactLabel";
+            this.ContactLabel.Size = new System.Drawing.Size(186, 26);
+            this.ContactLabel.TabIndex = 0;
+            this.ContactLabel.Text = "Email: mehdi.benhamida@ensi-uma.tn\r\nTel: +216 23 922 380";
+            // 
             // HelpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 310);
+            this.ClientSize = new System.Drawing.Size(428, 360);
+            this.Controls.Add(this.ContactBox);
             this.Controls.Add(this.OkBtn);
             this.Controls.Add(this.Support);
             this.Controls.Add(this.GithubLink);
@@ -130,6 +153,8 @@
             this.UserNotes.PerformLayout();
             this.License.ResumeLayout(false);
             this.License.PerformLayout();
+            this.ContactBox.ResumeLayout(false);
+            this.ContactBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +169,7 @@
         private System.Windows.Forms.LinkLabel GithubLink;
         private System.Windows.Forms.Label Support;
         private System.Windows.Forms.Button OkBtn;
+        private System.Windows.Forms.GroupBox ContactBox;
+        private System.Windows.Forms.Label ContactLabel;
     }
 }
