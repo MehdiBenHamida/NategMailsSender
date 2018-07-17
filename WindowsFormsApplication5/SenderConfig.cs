@@ -22,6 +22,7 @@ namespace NategMailsSender
             SenderMail.Text = Config.Mail;
             Password.Text = Config.Password;
             ReceiversPath.Text = Config.ReceiversFilePath;
+            FileHeader.Checked = Config.FileHeader;
             if (Config.Delimiter == ',')
             {
                 Comma.Checked = true;
@@ -50,6 +51,7 @@ namespace NategMailsSender
             Config.Mail = SenderMail.Text;
             Config.Password = Password.Text;
             Config.ReceiversFilePath = ReceiversPath.Text;
+            Config.FileHeader = FileHeader.Checked;
             if (Comma.Checked)
             {
                 Config.Delimiter = ',';

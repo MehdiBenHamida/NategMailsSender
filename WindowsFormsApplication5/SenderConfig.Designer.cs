@@ -37,15 +37,16 @@
             this.OK = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.CsvFileConfigBox = new System.Windows.Forms.GroupBox();
+            this.Browse = new System.Windows.Forms.Button();
+            this.ReceiversPath = new System.Windows.Forms.TextBox();
+            this.ReceiversFileLabel = new System.Windows.Forms.Label();
             this.Space = new System.Windows.Forms.RadioButton();
             this.Tab = new System.Windows.Forms.RadioButton();
             this.SemiColon = new System.Windows.Forms.RadioButton();
             this.Comma = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.ReceiversFileLabel = new System.Windows.Forms.Label();
-            this.ReceiversPath = new System.Windows.Forms.TextBox();
-            this.Browse = new System.Windows.Forms.Button();
             this.Receivers = new System.Windows.Forms.OpenFileDialog();
+            this.FileHeader = new System.Windows.Forms.CheckBox();
             this.SenderConfiguration.SuspendLayout();
             this.CsvFileConfigBox.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +99,7 @@
             // 
             // OK
             // 
-            this.OK.Location = new System.Drawing.Point(260, 261);
+            this.OK.Location = new System.Drawing.Point(260, 284);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(75, 23);
             this.OK.TabIndex = 5;
@@ -108,7 +109,7 @@
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(341, 261);
+            this.Cancel.Location = new System.Drawing.Point(341, 284);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 4;
@@ -118,6 +119,7 @@
             // 
             // CsvFileConfigBox
             // 
+            this.CsvFileConfigBox.Controls.Add(this.FileHeader);
             this.CsvFileConfigBox.Controls.Add(this.Browse);
             this.CsvFileConfigBox.Controls.Add(this.ReceiversPath);
             this.CsvFileConfigBox.Controls.Add(this.ReceiversFileLabel);
@@ -128,15 +130,42 @@
             this.CsvFileConfigBox.Controls.Add(this.label3);
             this.CsvFileConfigBox.Location = new System.Drawing.Point(12, 141);
             this.CsvFileConfigBox.Name = "CsvFileConfigBox";
-            this.CsvFileConfigBox.Size = new System.Drawing.Size(404, 112);
+            this.CsvFileConfigBox.Size = new System.Drawing.Size(404, 137);
             this.CsvFileConfigBox.TabIndex = 1;
             this.CsvFileConfigBox.TabStop = false;
-            this.CsvFileConfigBox.Text = "Receivers File Configuration";
+            this.CsvFileConfigBox.Text = " ";
+            // 
+            // Browse
+            // 
+            this.Browse.Location = new System.Drawing.Point(313, 25);
+            this.Browse.Name = "Browse";
+            this.Browse.Size = new System.Drawing.Size(75, 23);
+            this.Browse.TabIndex = 7;
+            this.Browse.Text = "Browse";
+            this.Browse.UseVisualStyleBackColor = true;
+            this.Browse.Click += new System.EventHandler(this.Browse_Click);
+            // 
+            // ReceiversPath
+            // 
+            this.ReceiversPath.Enabled = false;
+            this.ReceiversPath.Location = new System.Drawing.Point(69, 28);
+            this.ReceiversPath.Name = "ReceiversPath";
+            this.ReceiversPath.Size = new System.Drawing.Size(238, 20);
+            this.ReceiversPath.TabIndex = 6;
+            // 
+            // ReceiversFileLabel
+            // 
+            this.ReceiversFileLabel.AutoSize = true;
+            this.ReceiversFileLabel.Location = new System.Drawing.Point(12, 31);
+            this.ReceiversFileLabel.Name = "ReceiversFileLabel";
+            this.ReceiversFileLabel.Size = new System.Drawing.Size(51, 13);
+            this.ReceiversFileLabel.TabIndex = 5;
+            this.ReceiversFileLabel.Text = "File Path:";
             // 
             // Space
             // 
             this.Space.AutoSize = true;
-            this.Space.Location = new System.Drawing.Point(332, 70);
+            this.Space.Location = new System.Drawing.Point(329, 70);
             this.Space.Name = "Space";
             this.Space.Size = new System.Drawing.Size(56, 17);
             this.Space.TabIndex = 4;
@@ -158,7 +187,7 @@
             // SemiColon
             // 
             this.SemiColon.AutoSize = true;
-            this.SemiColon.Location = new System.Drawing.Point(151, 70);
+            this.SemiColon.Location = new System.Drawing.Point(152, 72);
             this.SemiColon.Name = "SemiColon";
             this.SemiColon.Size = new System.Drawing.Size(78, 17);
             this.SemiColon.TabIndex = 2;
@@ -168,7 +197,7 @@
             // Comma
             // 
             this.Comma.AutoSize = true;
-            this.Comma.Location = new System.Drawing.Point(69, 70);
+            this.Comma.Location = new System.Drawing.Point(69, 72);
             this.Comma.Name = "Comma";
             this.Comma.Size = new System.Drawing.Size(60, 17);
             this.Comma.TabIndex = 1;
@@ -184,42 +213,25 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Delimiter:";
             // 
-            // ReceiversFileLabel
-            // 
-            this.ReceiversFileLabel.AutoSize = true;
-            this.ReceiversFileLabel.Location = new System.Drawing.Point(12, 31);
-            this.ReceiversFileLabel.Name = "ReceiversFileLabel";
-            this.ReceiversFileLabel.Size = new System.Drawing.Size(51, 13);
-            this.ReceiversFileLabel.TabIndex = 5;
-            this.ReceiversFileLabel.Text = "File Path:";
-            // 
-            // ReceiversPath
-            // 
-            this.ReceiversPath.Enabled = false;
-            this.ReceiversPath.Location = new System.Drawing.Point(69, 28);
-            this.ReceiversPath.Name = "ReceiversPath";
-            this.ReceiversPath.Size = new System.Drawing.Size(238, 20);
-            this.ReceiversPath.TabIndex = 6;
-            // 
-            // Browse
-            // 
-            this.Browse.Location = new System.Drawing.Point(313, 25);
-            this.Browse.Name = "Browse";
-            this.Browse.Size = new System.Drawing.Size(75, 23);
-            this.Browse.TabIndex = 7;
-            this.Browse.Text = "Browse";
-            this.Browse.UseVisualStyleBackColor = true;
-            this.Browse.Click += new System.EventHandler(this.Browse_Click);
-            // 
             // Receivers
             // 
             this.Receivers.FileName = "Receivers.csv";
+            // 
+            // FileHeader
+            // 
+            this.FileHeader.AutoSize = true;
+            this.FileHeader.Location = new System.Drawing.Point(69, 104);
+            this.FileHeader.Name = "FileHeader";
+            this.FileHeader.Size = new System.Drawing.Size(80, 17);
+            this.FileHeader.TabIndex = 8;
+            this.FileHeader.Text = "File Header";
+            this.FileHeader.UseVisualStyleBackColor = true;
             // 
             // SenderConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 294);
+            this.ClientSize = new System.Drawing.Size(428, 316);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.OK);
             this.Controls.Add(this.CsvFileConfigBox);
@@ -259,5 +271,6 @@
         private System.Windows.Forms.Button Browse;
         private System.Windows.Forms.TextBox ReceiversPath;
         private System.Windows.Forms.OpenFileDialog Receivers;
+        private System.Windows.Forms.CheckBox FileHeader;
     }
 }

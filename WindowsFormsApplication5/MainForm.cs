@@ -42,6 +42,10 @@ namespace NategMailsSender
                 char delimiter = Config.Delimiter;
                 using (System.IO.StreamReader file = new StreamReader(ReceiversFile))
                 {
+                    if (Config.FileHeader)
+                    {
+                        file.ReadLine();
+                    }
                     string line = file.ReadLine();
                     while ((line != null))
                     {
