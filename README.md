@@ -7,4 +7,4 @@ If you face an issue while using this software or you have a suggestion to impro
 This Software is under Mèhdi Ben Hamida property, and it is distributed under a free and open source MIT license. 
 ### Support 
 If you need any help while using this software please feel free to contact us:
-<mehdi.benhamida@ensi-uma.tn/>
+<mehdi.benhamida@ensi-uma.tn>
