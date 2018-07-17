@@ -61,16 +61,18 @@ namespace NategMailsSender
                         }
                         if (Attachement.Checked)
                         {
+                            System.Net.Mail.Attachment attachment;
                             if (CommonFiles.Checked)
                             {
                                 //do things for if attachement is common file
+
                             }
                             else if (CustomFiles.Checked)
                             {
                                 //do things if attachement is custom for each mail
                             }
-                            //Attachment data = new Attachment("");
-                            //mail.Attachments.Add(data);
+                            //attachment = new System.Net.Mail.Attachment("");
+                            //mail.Attachments.Add(attachment);
                         }
                         SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com", 587);
                         SmtpServer.Credentials = new System.Net.NetworkCredential(SenderMail, SenderPassword);
