@@ -68,7 +68,6 @@ namespace NategMailsSender
             {
                 Config.Delimiter = ' ';
             }
-
             this.Close();
         }
 
