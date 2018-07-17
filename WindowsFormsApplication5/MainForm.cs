@@ -37,7 +37,7 @@ namespace NategMailsSender
         void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             const int MaxAttemps = 3;
-            int Attemps = 0;
+            int Attemps;
             int progress = 0;
             try
             {
@@ -51,6 +51,7 @@ namespace NategMailsSender
                     string line = file.ReadLine();
                     while ((line != null))
                     {
+                        Attemps = 0;
                         string[] details = line.Split(delimiter);
                         MailMessage mail = new MailMessage();
                         mail.From = new MailAddress(SenderMail);
@@ -82,20 +83,26 @@ namespace NategMailsSender
                         SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com", 587);
                         SmtpServer.Credentials = new System.Net.NetworkCredential(SenderMail, SenderPassword);
                         SmtpServer.EnableSsl = true;
-                        try
-                        {
-                            SmtpServer.Send(mail);
-                            progress++;
-                            backgroundWorker.ReportProgress(progress);
-                            isSuccess = true;
-                        }
-                        catch (Exception ep)
-                        {
-                            MessageBox.Show("Can not send mail to: " + ReceiverName + "\n" + ep.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            isSuccess = false;
-                            break;
-                        }
-                        line = file.ReadLine();
+                        Retry: 
+                            try
+                            {
+                                    Attemps++;
+                                    SmtpServer.Send(mail);
+                                    progress++;
+                                    backgroundWorker.ReportProgress(progress);
+                                    isSuccess = true;
+                            }
+                            catch (Exception ep)
+                            {
+                                if (Attemps <= MaxAttemps)
+                                {
+                                    goto Retry;
+                                }
+                                MessageBox.Show("Can not send mail to: " + ReceiverName + "\n" + ep.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                isSuccess = false;
+                                break;
+                            }
+                            line = file.ReadLine();
                     }
                 }
             }
