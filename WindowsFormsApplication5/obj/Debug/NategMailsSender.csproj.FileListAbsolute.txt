@@ -30,3 +30,4 @@ C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFor
 C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.csproj.GenerateResource.Cache
 C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\bin\Debug\NategMailsSender.exe
 C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\bin\Debug\NategMailsSender.pdb
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Debug\NategMailsSender.csprojResolveAssemblyReference.cache
