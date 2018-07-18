@@ -131,6 +131,7 @@ namespace NategMailsSender
         {
             if (isSuccess == true)
             {
+                SendingProgress.Value = 100;
                 Percentage.Text = "100 %";
                 SendingLabel.Text = "All mails are sent succesfully!";
                 string messages = "All mails has been sent!";
@@ -140,7 +141,9 @@ namespace NategMailsSender
             }
             else
             {
+                Percentage.Text = "0 %";
                 SendingLabel.Text = "Sending failed";
+                SendingProgress.Value = 0;
             }
             MailBox.Enabled = true;
             ProgressBox.Enabled = false;
