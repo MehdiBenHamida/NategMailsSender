@@ -96,6 +96,7 @@ namespace NategMailsSender
                             {
                                 if (Attemps <= MaxAttemps)
                                 {
+                                    System.Threading.Thread.Sleep(Attemps*500);
                                     goto Retry;
                                 }
                                 MessageBox.Show("Can not send mail to: " + ReceiverName + "\n" + ep.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
