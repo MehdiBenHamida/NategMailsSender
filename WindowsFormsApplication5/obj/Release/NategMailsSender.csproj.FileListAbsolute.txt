@@ -1,0 +1,14 @@
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\bin\Release\NategMailsSender.exe.config
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\bin\Release\NategMailsSender.exe.manifest
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\bin\Release\NategMailsSender.application
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\bin\Release\NategMailsSender.exe
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\bin\Release\NategMailsSender.pdb
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Release\NategMailsSender.HelpForm.resources
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Release\NategMailsSender.MainForm.resources
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Release\NategMailsSender.Properties.Resources.resources
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Release\NategMailsSender.SenderConfig.resources
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Release\NategMailsSender.csproj.GenerateResource.Cache
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Release\NategMailsSender.exe.manifest
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Release\NategMailsSender.application
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Release\NategMailsSender.exe
+C:\Users\mhdib\Documents\Visual Studio 2012\Projects\NategMailsSender\WindowsFormsApplication5\obj\Release\NategMailsSender.pdb
